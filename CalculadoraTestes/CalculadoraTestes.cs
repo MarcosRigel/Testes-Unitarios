@@ -25,6 +25,7 @@ public class CalculadoraTestes
         Assert.Equal(15, resultado);
     }
 
+    [Fact]
     public void DeveSomar10Com10ERetornar20()
     {
         // Arrange
@@ -51,5 +52,23 @@ public class CalculadoraTestes
         Assert.True(resultado);
     }
 
+    [Theory]
+    [InlineData(2)]
+    [InlineData(4)]
+    [InlineData(6)]
+    [InlineData(8)]
+    [InlineData(10)]
+    public void DeveVerificarSeOsNumerosSaoParesETornarVerdadeiro(int numero)
+    {
+        // Act
+        bool resultado = _calc.EhPar(numero);
+
+        // Assert
+        Assert.True(resultado);
+    }
+
+    // 2, 4, 6, 8, 10
+
+    
 
 }
